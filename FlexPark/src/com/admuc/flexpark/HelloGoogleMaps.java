@@ -17,7 +17,7 @@ public class HelloGoogleMaps extends MapActivity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.main);
-	    MapView mapView = (MapView) findViewById(R.id.mapview);
+	    MapView mapView = (MapView) findViewById(R.id.map);
 	    mapView.setBuiltInZoomControls(true);
 	}
 
