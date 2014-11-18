@@ -1,0 +1,43 @@
+package de.tud.wise.caredroid;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import de.tud.wise.caredroid.model.Case;
+import de.tud.wise.caredroid.model.Path;
+import de.tud.wise.caredroid.model.Patient;
+import de.tud.wise.caredroid.test.BenniHelper;
+
+/**
+ * zentrale Aktivit‰t und Start-Aktivit‰t
+ * @author Benni
+ *
+ */
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		//		Cubetto BeispielPfad als Objekt		//
+		//////////////////////////////////////////////
+
+		BenniHelper help = new BenniHelper();
+
+		Path cubettoPath = help.getCubettoExamplePath();
+
+		Patient pat = new Patient(null, null, "CubettoPatient", "Bonnerstraﬂe 52, 01823 Dresden", "038738123");
+
+		new Case(null, null, "Cubetto Zahnbeschwerden 1", cubettoPath, pat);
+
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+}

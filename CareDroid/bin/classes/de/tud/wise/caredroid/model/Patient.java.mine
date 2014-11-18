@@ -1,0 +1,82 @@
+package de.tud.wise.caredroid.model;
+
+import java.util.ArrayList;
+
+import android.content.Context;
+
+
+/**
+ * Beschreibt Patienten und ihre Stammdaten. Patienten werden Fälle zugeordnet.
+ * 
+ * @author Benni
+ *
+ */
+public class Patient extends MetaObject{
+	private Integer id;
+	private String name;
+	private String adresse;
+	private int versNummer;
+	private final ArrayList<Case> cases;
+
+	public Patient(Integer id, String name, String adresse, int versN) {
+		this.id = id;
+		this.name = name;
+		this.adresse = adresse;
+		this.versNummer = versN;
+		this.cases = new ArrayList<Case>();
+	}
+
+	public ArrayList<Case> getCases() {
+		return cases;
+	}
+
+	/**
+	 * Fügt neuen Case zum Patienten hinzu
+	 * @param newCase neues Case-Objekt
+	 * @return true wenn erfolgreich, false wenn nicht
+	 */
+	public boolean addCase(Case newCase) {
+		if (cases.add(newCase)) {
+			return true;
+		}
+		return false;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	public int getVersNummer() {
+		return versNummer;
+	}
+
+	public void setVersNummer(int versNummer) {
+		this.versNummer = versNummer;
+	}
+
+	@Override
+	public void accept(Visitor visitor, Context context) {
+		// TODO Auto-generated method stub
+		
+	}
+}
