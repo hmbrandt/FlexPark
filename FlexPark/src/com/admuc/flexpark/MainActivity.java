@@ -8,6 +8,8 @@ import com.google.android.gms.maps.MapFragment;
 
 public class MainActivity extends Activity {
 	
+	//This is a test
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
