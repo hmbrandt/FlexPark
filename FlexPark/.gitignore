@@ -1,0 +1,15 @@
+# built application files
+*.apk
+*.ap_
+
+# Java class files
+*.class
+
+# app binary files
+bin/*
+gen/*
+
+# Eclipse project files
+.classpath
+.project
+project.properties

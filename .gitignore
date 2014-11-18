@@ -1,15 +1,1 @@
-# built application files
-*.apk
-*.ap_
-
-# Java class files
-*.class
-
-# app binary files
-/Flexpark/bin/
-/google-play-services_lib/*
-
-# Eclipse project files
-.classpath
-.project
-project.properties
+google-play-services_lib/*
