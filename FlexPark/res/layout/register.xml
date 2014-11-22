@@ -1,88 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+  	android:layout_height="match_parent">
+<RelativeLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="30dp"
-        android:text="First Name"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/editText1"
-        android:layout_marginTop="20dp"
-        android:text="Last Name"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView2"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/editText2"
-        android:layout_marginTop="20dp"
-        android:text="License Plate"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView3"
-        android:ems="10"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView4"
-        android:ems="10" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/editText3"
-        android:layout_marginTop="20dp"
-        android:text="Username"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView5"
-        android:ems="10" />
-
-    <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/register_RegisterText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -92,34 +19,116 @@
         android:text="Register"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView6"
-        android:ems="10"
-        android:inputType="textPassword" />
-
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/register_SubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignBaseline="@+id/register_RegisterText"
+        android:layout_alignBottom="@+id/register_RegisterText"
         android:layout_alignParentRight="true"
         android:layout_marginRight="40dp"
-        android:onClick="openMap2"
+        android:onClick="openMap"
         android:text="Submit" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/register_FNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/editText4"
+        android:layout_alignLeft="@+id/register_RegisterText"
+        android:layout_below="@+id/register_SubmitButton"
+        android:layout_marginTop="20dp"
+        android:text="First Name"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/register_FNameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_RegisterText"
+        android:layout_below="@+id/register_FNameText"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/register_LNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_RegisterText"
+        android:layout_below="@+id/register_FNameInput"
+        android:layout_marginTop="20dp"
+        android:text="Last Name"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/register_LNameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_RegisterText"
+        android:layout_below="@+id/register_LNameText"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+    
+    <TextView
+        android:id="@+id/register_LPlateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_RegisterText"
+        android:layout_below="@+id/register_LNameInput"
+        android:layout_marginTop="20dp"
+        android:text="License Plate"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/register_LPlateInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_RegisterText"
+        android:layout_below="@+id/register_LPlateText"
+        android:layout_marginTop="10dp"
+        android:ems="10" />
+    
+    <TextView
+        android:id="@+id/register_UsernameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_RegisterText"
+        android:layout_below="@+id/register_LPlateInput"
+        android:layout_marginTop="20dp"
+        android:text="Username"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/register_UsernameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_RegisterText"
+        android:layout_below="@+id/register_UsernameText"
+        android:layout_marginTop="10dp"
+        android:ems="10" />
+    
+  	<TextView
+        android:id="@+id/register_PasswordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_RegisterText"
+        android:layout_below="@+id/register_UsernameInput"
         android:layout_marginTop="20dp"
         android:text="Password"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+  	<EditText
+  	    android:id="@+id/register_PasswordInput"
+  	    android:layout_width="wrap_content"
+  	    android:layout_height="wrap_content"
+  	    android:layout_alignLeft="@+id/register_RegisterText"
+  	    android:layout_below="@+id/register_PasswordText"
+  	    android:ems="10"
+  	    android:inputType="textPassword" />
+
 </RelativeLayout>
+</ScrollView>

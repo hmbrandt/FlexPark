@@ -5,23 +5,23 @@
 	android:orientation="vertical">
 
 	<TextView
-        android:id="@+id/textView1"
+        android:id="@+id/login_UsernameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+ 		android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="40dp"
-        android:text="Login"
+        android:text="Username"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
+	    
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/login_UsernameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="30dp"
+        android:layout_alignLeft="@+id/login_UsernameText"
+        android:layout_below="@+id/login_UsernameText"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName" >
 
@@ -29,55 +29,43 @@
     </EditText>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/login_PasswordText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/editText1"
-        android:layout_marginTop="40dp"
+        android:layout_alignLeft="@+id/login_UsernameText"
+        android:layout_below="@+id/login_UsernameInput"
+        android:layout_marginTop="50dp"
         android:text="Password"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/login_PasswordInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="30dp"
+        android:layout_alignLeft="@+id/login_UsernameText"
+        android:layout_below="@+id/login_PasswordText"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/login_LoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="40dp"
-        android:onClick="openRegister"
-        android:text="Register" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="60dp"
-        android:text="Username"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_alignLeft="@+id/login_UsernameText"
+        android:layout_below="@+id/login_PasswordInput"
+        android:layout_marginTop="50dp"
+        android:onClick="openMap"
+        android:text="Login" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/login_RegisterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/editText2"
-        android:layout_marginTop="30dp"
-        android:layout_toLeftOf="@+id/button1"
-        android:onClick="openMap2"
-        android:text="Enter" />
+        android:layout_alignBaseline="@+id/login_LoginButton"
+        android:layout_alignBottom="@+id/login_LoginButton"
+        android:layout_alignRight="@+id/login_PasswordInput"
+        android:onClick="openRegister"
+        android:text="Register" />
 
 </RelativeLayout>

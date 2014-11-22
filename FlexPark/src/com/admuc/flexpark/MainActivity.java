@@ -17,12 +17,12 @@ public class MainActivity extends Activity {
         
     }
     
-    protected void openRegister (View view) {
+    public void openRegister(View view) {
         setContentView(R.layout.register);
         
     }
     
-    public void openMap2(View view){
+    public void openMap(View view){
     	
     	Intent i = new Intent(getApplicationContext(), GoogleMapsActivity.class);
     	startActivity(i);
