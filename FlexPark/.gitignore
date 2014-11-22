@@ -13,3 +13,6 @@ gen/*
 .classpath
 .project
 project.properties
+
+# log files
+*.log
