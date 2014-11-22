@@ -25,8 +25,8 @@ public class ParkingSpace {
 		Random generator = new Random();
 
 		for (int i = 0; i < 10; i++) {
-			double lat = showRandomInteger(45, 55, generator);
-			double lng = showRandomInteger(10, 15, generator);
+			double lat = showRandomInteger(50, 52, generator);
+			double lng = showRandomInteger(12, 14, generator);
 			
 			Log.d("ParkSpace", "lat: " + lat);
 			Log.d("ParkSpace", "lng: " + lng); 
