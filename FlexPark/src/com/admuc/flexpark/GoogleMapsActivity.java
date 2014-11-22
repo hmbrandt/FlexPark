@@ -5,6 +5,8 @@ import java.util.List;
 import com.admuc.flexpark.util.GoogleMapsFiller;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -30,10 +32,12 @@ public class GoogleMapsActivity extends Activity {
         
         List<MarkerOptions> markerOptions = filler.addMarkersToMap();
         
+        BitmapDescriptor icon = BitmapDescriptorFactory.fromResource(R.drawable.parkingspace_small);
+        
         Log.d("MainActivity", "got markerOptions");
         
         for(MarkerOptions m : markerOptions){
-        	googleMap.addMarker(m);
+        	googleMap.addMarker(m.icon(icon));
         }
         
         // additionally Dresden
@@ -42,11 +46,7 @@ public class GoogleMapsActivity extends Activity {
         mOptions.position(new LatLng(51.0504088, 13.7372621));
         mOptions.title("DRESDEN");
         
-        googleMap.addMarker(mOptions);
-        
-        googleMap.addMarker(new MarkerOptions()
-        .position(new LatLng(51.1504088, 13.7372621))
-        .title("DRESDEN 2"));        
+        googleMap.addMarker(mOptions);   
     }
 
 }
