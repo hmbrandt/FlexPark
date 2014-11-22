@@ -27,7 +27,7 @@
         android:layout_alignBottom="@+id/register_RegisterText"
         android:layout_alignParentRight="true"
         android:layout_marginRight="40dp"
-        android:onClick="openMap"
+        android:onClick="openGetParkingTicket"
         android:text="Submit" />
 
     <TextView
