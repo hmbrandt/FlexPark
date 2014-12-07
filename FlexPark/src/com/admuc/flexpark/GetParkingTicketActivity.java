@@ -2,6 +2,7 @@ package com.admuc.flexpark;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -15,11 +16,14 @@ public class GetParkingTicketActivity extends Activity {
       setContentView(R.layout.getparkingticket);
 
       Calendar cal = Calendar.getInstance();
-      SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+      SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.GERMAN);
 
-      TextView textView = (TextView) findViewById(R.id.gpt_CTimeOutput);
+      TextView twCurrentTime = (TextView) findViewById(R.id.gpt_CTimeOutput);
+      TextView twBookedTime = (TextView) findViewById(R.id.gpt_BTimeOutput);
 
-      textView.setText(sdf.format(cal.getTime()));
+      twCurrentTime.setText(sdf.format(cal.getTime()));
+      cal.add(Calendar.HOUR_OF_DAY, 1);
+      twBookedTime.setText(sdf.format(cal.getTime()));
    }
 
 }
