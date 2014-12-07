@@ -10,20 +10,35 @@ import android.widget.TextView;
 
 public class GetParkingTicketActivity extends Activity {
 
+   Calendar cal;
+
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.getparkingticket);
 
-      Calendar cal = Calendar.getInstance();
+      cal = Calendar.getInstance();
       SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.GERMAN);
 
-      TextView twCurrentTime = (TextView) findViewById(R.id.gpt_CTimeOutput);
-      TextView twBookedTime = (TextView) findViewById(R.id.gpt_BTimeOutput);
+      TextView tvCurrentTime = (TextView) findViewById(R.id.gpt_CTimeOutput);
+      TextView tvBookedTime = (TextView) findViewById(R.id.gpt_BTimeOutput);
 
-      twCurrentTime.setText(sdf.format(cal.getTime()));
-      cal.add(Calendar.HOUR_OF_DAY, 1);
-      twBookedTime.setText(sdf.format(cal.getTime()));
+      tvCurrentTime.setText(sdf.format(cal.getTime()));
+      cal.add(Calendar.MINUTE, 15);
+      tvBookedTime.setText(sdf.format(cal.getTime()));
    }
 
+   public void minusBookedTime() {
+      SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.GERMAN);
+      TextView tvBookedTime = (TextView) findViewById(R.id.gpt_BTimeOutput);
+      cal.add(Calendar.MINUTE, -15);
+      tvBookedTime.setText(sdf.format(cal.getTime()));
+   }
+
+   public void plusBookedTime() {
+      SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.GERMAN);
+      TextView tvBookedTime = (TextView) findViewById(R.id.gpt_BTimeOutput);
+      cal.add(Calendar.MINUTE, 15);
+      tvBookedTime.setText(sdf.format(cal.getTime()));
+   }
 }
