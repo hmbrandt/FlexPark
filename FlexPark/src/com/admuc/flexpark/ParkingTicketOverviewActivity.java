@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -108,6 +109,12 @@ public class ParkingTicketOverviewActivity extends Activity {
       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
          Datensatz gewaehlterDatensatz = datensaetze.get(position);
       }
+   }
+
+   public void openMap(View view) {
+
+      Intent i = new Intent(getApplicationContext(), GoogleMapsActivity.class);
+      startActivity(i);
    }
 
 }
