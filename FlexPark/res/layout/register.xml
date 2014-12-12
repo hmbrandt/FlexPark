@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView 
+<RelativeLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
   	android:layout_height="match_parent">
-<RelativeLayout 
+<ScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent" >
 
     <TextView
         android:id="@+id/register_RegisterText"
@@ -130,5 +129,5 @@
   	    android:ems="10"
   	    android:inputType="textPassword" />
 
-</RelativeLayout>
 </ScrollView>
+</RelativeLayout>

@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.Locale;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -42,4 +43,10 @@ public class GetParkingTicketActivity extends Activity {
       cal.add(Calendar.MINUTE, 15);
       tvBookedTime.setText(sdf.format(cal.getTime()));
    }
+
+   public void bookTicket(View view) {
+      Intent i = new Intent(getApplicationContext(), ParkingTicketOverviewActivity.class);
+      startActivity(i);
+   }
+
 }
