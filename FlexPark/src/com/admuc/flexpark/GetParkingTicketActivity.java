@@ -40,6 +40,9 @@ public class GetParkingTicketActivity extends Activity {
       currentCosts = feeSteps;
 
       tvFee.setText(currentCosts + "0 €");
+
+      Button minusButton = (Button) findViewById(R.id.gpt_BTimeMinusButton);
+      minusButton.setEnabled(false);
    }
 
    public void minusBookedTime(View view) {
