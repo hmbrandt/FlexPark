@@ -10,21 +10,6 @@
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" >
-        <TextView
-      	  	android:id="@+id/pto_ListElementParkingSpace"
-        	android:layout_width="wrap_content"
-   		    android:layout_height="wrap_content"
-        	android:layout_alignParentBottom="true"
-        	android:layout_alignParentRight="true"
-        	android:text="Parking Space" />
-        <TextView
-      	  	android:id="@+id/pto_ListElementTotalFee"
-        	android:layout_width="wrap_content"
-   		    android:layout_height="wrap_content"
-        	android:layout_alignParentBottom="true"
-        	android:layout_alignParentRight="true"
-        	android:text="Total Fee" />
-        
     </ListView>
     
     <Button
