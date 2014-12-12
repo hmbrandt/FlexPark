@@ -33,17 +33,22 @@ public class ParkingTicketOverviewActivity extends Activity {
    @Override
    protected void onResume() {
       super.onResume();
-      // falls wir vom Änderungsformular zurückkommen...
       myAdapter.notifyDataSetChanged();
    }
 
    public class Datensatz {
-      public String name; // besser setter und getter-Methoden schreiben, stört hier aber...
-      public String fee; // die Umwandlung von Datum lasse ich weg - das ist ein anderes (großes) Problem
+      public String psname;
+      public String startime;
+      public String bookedtime;
+      public String resttime;
+      public String totalfee;
 
-      public Datensatz(String name, String datum) {
-         this.name = name;
-         this.fee = datum;
+      public Datensatz(String psname, String startime, String bookedtime, String resttime, String totalfee) {
+         this.psname = psname;
+         this.startime = startime;
+         this.bookedtime = bookedtime;
+         this.resttime = resttime;
+         this.totalfee = totalfee;
       }
    }
 
@@ -51,9 +56,9 @@ public class ParkingTicketOverviewActivity extends Activity {
 
    private void initDatensaetze() {
       datensaetze = new ArrayList<Datensatz>();
-      Datensatz datensatz1 = new Datensatz("Altmarkt", "2,30");
-      Datensatz datensatz2 = new Datensatz("Postplatz", "5,48");
-      Datensatz datensatz3 = new Datensatz("TU", "0,50");
+      Datensatz datensatz1 = new Datensatz("Altmarkt", "05:23", "06:23", "00:20", "02,30 €");
+      Datensatz datensatz2 = new Datensatz("Postplatz", "11:30", "15:15", "02:12", "08,50 €");
+      Datensatz datensatz3 = new Datensatz("TU Dresden", "17:45", "19:00", "00:30", "01,10 €");
       datensaetze.add(datensatz1);
       datensaetze.add(datensatz2);
       datensaetze.add(datensatz3);
@@ -88,14 +93,19 @@ public class ParkingTicketOverviewActivity extends Activity {
       private void bindView(LinearLayout view, int position) {
          Datensatz datensatz = getItem(position);
          view.setId((int) getItemId(position));
-         TextView nameTextView = (TextView) view.findViewById(R.id.pto_ListElementParkingSpace);
-         TextView feeTextView = (TextView) view.findViewById(R.id.pto_ListElementTotalFee);
-         nameTextView.setText(datensatz.name);
-         feeTextView.setText(datensatz.fee);
+         TextView psnameTextView = (TextView) view.findViewById(R.id.pto_ListElementParkingSpaceOutput);
+         TextView startimeTextView = (TextView) view.findViewById(R.id.pto_ListElementStartTimeOutput);
+         TextView bookedtimeTextView = (TextView) view.findViewById(R.id.pto_ListElementBookedTimeOutput);
+         TextView resttimeTextView = (TextView) view.findViewById(R.id.pto_ListElementRestTimeOutput);
+         TextView totalfeeTextView = (TextView) view.findViewById(R.id.pto_ListElementTotalFeeOutput);
+         psnameTextView.setText(datensatz.psname);
+         startimeTextView.setText(datensatz.startime);
+         bookedtimeTextView.setText(datensatz.bookedtime);
+         resttimeTextView.setText(datensatz.resttime);
+         totalfeeTextView.setText(datensatz.totalfee);
       }
 
       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-         // Meldung ausgeben oder Intent bauen und Activity starten
          Datensatz gewaehlterDatensatz = datensaetze.get(position);
       }
    }

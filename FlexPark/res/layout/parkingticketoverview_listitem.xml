@@ -1,21 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" >
-        
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
         <TextView
-            android:id="@+id/pto_ListElementParkingSpace"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal" 
-            android:text="Parking Space" />
-        <TextView
-            android:id="@+id/pto_ListElementTotalFee"
+            android:id="@+id/pto_ListElementParkingSpaceText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal" 
-            android:text="Total Fee" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="Parking Space:" 
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
+        <TextView
+            android:id="@+id/pto_ListElementStartTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pto_ListElementParkingSpaceText"
+            android:layout_below="@+id/pto_ListElementParkingSpaceText"
+            android:text="Start Time:"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/pto_ListElementBookedTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pto_ListElementParkingSpaceText"
+            android:layout_below="@+id/pto_ListElementStartTimeText"
+            android:text="Booked Time:"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/pto_ListElementRestTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pto_ListElementParkingSpaceText"
+            android:layout_below="@+id/pto_ListElementBookedTimeText"
+            android:text="Rest Time"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/pto_ListElementTotalFeeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pto_ListElementParkingSpaceText"
+            android:layout_below="@+id/pto_ListElementRestTimeText"
+            android:text="Total Fee"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/pto_ListElementParkingSpaceOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/pto_ListElementParkingSpaceText"
+            android:layout_alignBottom="@+id/pto_ListElementParkingSpaceText"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/pto_ListElementParkingSpaceText"
+            android:text="parkingspace"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/pto_ListElementStartTimeOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pto_ListElementParkingSpaceOutput"
+            android:layout_below="@+id/pto_ListElementParkingSpaceOutput"
+            android:text="XY:XY"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+        <TextView
+            android:id="@+id/pto_ListElementBookedTimeOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pto_ListElementParkingSpaceOutput"
+            android:layout_below="@+id/pto_ListElementStartTimeOutput"
+            android:text="XX:YY"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+        <TextView
+            android:id="@+id/pto_ListElementRestTimeOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pto_ListElementParkingSpaceOutput"
+            android:layout_below="@+id/pto_ListElementBookedTimeOutput"
+            android:text="YY:XX"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+        <TextView
+            android:id="@+id/pto_ListElementTotalFeeOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pto_ListElementParkingSpaceOutput"
+            android:layout_below="@+id/pto_ListElementRestTimeOutput"
+            android:text="00,00 €"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+        
+
+</RelativeLayout>

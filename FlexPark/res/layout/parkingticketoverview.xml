@@ -6,21 +6,33 @@
 
     <ListView
         android:id="@+id/pto_ListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pto_newParkingTicketButton"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/pto_ParkingTicketsText"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp" >
+
     </ListView>
-    
+
+    <TextView
+        android:id="@+id/pto_ParkingTicketsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Parking Tickets"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
     <Button
-        android:id="@+id/pto_newParkingTicket"
+        android:id="@+id/pto_newParkingTicketButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/pto_newParkingTicket"
-        android:text="New Parking Ticket" 
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-    
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="New Parking Ticket" />
     
 </RelativeLayout>
