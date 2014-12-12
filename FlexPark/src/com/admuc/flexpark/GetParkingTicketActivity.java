@@ -6,6 +6,7 @@ import java.util.Locale;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class GetParkingTicketActivity extends Activity {
@@ -28,14 +29,14 @@ public class GetParkingTicketActivity extends Activity {
       tvBookedTime.setText(sdf.format(cal.getTime()));
    }
 
-   public void minusBookedTime() {
+   public void minusBookedTime(View view) {
       SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.GERMAN);
       TextView tvBookedTime = (TextView) findViewById(R.id.gpt_BTimeOutput);
       cal.add(Calendar.MINUTE, -15);
       tvBookedTime.setText(sdf.format(cal.getTime()));
    }
 
-   public void plusBookedTime() {
+   public void plusBookedTime(View view) {
       SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.GERMAN);
       TextView tvBookedTime = (TextView) findViewById(R.id.gpt_BTimeOutput);
       cal.add(Calendar.MINUTE, 15);
