@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class ParkingTicketOverviewActivity extends Activity {
@@ -85,12 +85,12 @@ public class ParkingTicketOverviewActivity extends Activity {
       }
 
       public View getView(int position, View convertView, ViewGroup parent) {
-         LinearLayout itemView = (LinearLayout) mInflater.inflate(R.layout.parkingticketoverview_listitem, parent, false);
+         RelativeLayout itemView = (RelativeLayout) mInflater.inflate(R.layout.parkingticketoverview_listitem, parent, false);
          bindView(itemView, position);
          return itemView;
       }
 
-      private void bindView(LinearLayout view, int position) {
+      private void bindView(RelativeLayout view, int position) {
          Datensatz datensatz = getItem(position);
          view.setId((int) getItemId(position));
          TextView psnameTextView = (TextView) view.findViewById(R.id.pto_ListElementParkingSpaceOutput);
