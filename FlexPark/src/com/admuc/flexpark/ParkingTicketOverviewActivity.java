@@ -39,16 +39,16 @@ public class ParkingTicketOverviewActivity extends Activity {
 
    public class Datensatz {
       public String psname;
-      public String startime;
-      public String bookedtime;
-      public String resttime;
+      public String stardate;
+      public String bookeduntil;
+      public String remtime;
       public String totalfee;
 
-      public Datensatz(String psname, String startime, String bookedtime, String resttime, String totalfee) {
+      public Datensatz(String psname, String stardate, String bookeduntil, String remtime, String totalfee) {
          this.psname = psname;
-         this.startime = startime;
-         this.bookedtime = bookedtime;
-         this.resttime = resttime;
+         this.stardate = stardate;
+         this.bookeduntil = bookeduntil;
+         this.remtime = remtime;
          this.totalfee = totalfee;
       }
    }
@@ -57,9 +57,9 @@ public class ParkingTicketOverviewActivity extends Activity {
 
    private void initDatensaetze() {
       datensaetze = new ArrayList<Datensatz>();
-      Datensatz datensatz1 = new Datensatz("Altmarkt", "05:23", "06:23", "00:20", "02,30 €");
-      Datensatz datensatz2 = new Datensatz("Postplatz", "11:30", "15:15", "02:12", "08,50 €");
-      Datensatz datensatz3 = new Datensatz("TU Dresden", "17:45", "19:00", "00:30", "01,10 €");
+      Datensatz datensatz1 = new Datensatz("Altmarkt", "03.05.2014 05:23", "03.05.2014 06:23", "00:20", "02,30 €");
+      Datensatz datensatz2 = new Datensatz("Postplatz", "28.09.2014 11:30", "28.09.2014 15:15", "02:12", "08,50 €");
+      Datensatz datensatz3 = new Datensatz("TU Dresden", "01.04.2014 17:45", "01.04.2014 19:00", "00:30", "01,10 €");
       datensaetze.add(datensatz1);
       datensaetze.add(datensatz2);
       datensaetze.add(datensatz3);
@@ -95,14 +95,14 @@ public class ParkingTicketOverviewActivity extends Activity {
          Datensatz datensatz = getItem(position);
          view.setId((int) getItemId(position));
          TextView psnameTextView = (TextView) view.findViewById(R.id.pto_ListElementParkingSpaceOutput);
-         TextView startimeTextView = (TextView) view.findViewById(R.id.pto_ListElementStartTimeOutput);
-         TextView bookedtimeTextView = (TextView) view.findViewById(R.id.pto_ListElementBookedTimeOutput);
-         TextView resttimeTextView = (TextView) view.findViewById(R.id.pto_ListElementRestTimeOutput);
+         TextView startdateTextView = (TextView) view.findViewById(R.id.pto_ListElementStartDateOutput);
+         TextView bookeduntilTextView = (TextView) view.findViewById(R.id.pto_ListElementBookedUntilOutput);
+         TextView remtimeTextView = (TextView) view.findViewById(R.id.pto_ListElementRemTimeOutput);
          TextView totalfeeTextView = (TextView) view.findViewById(R.id.pto_ListElementTotalFeeOutput);
          psnameTextView.setText(datensatz.psname);
-         startimeTextView.setText(datensatz.startime);
-         bookedtimeTextView.setText(datensatz.bookedtime);
-         resttimeTextView.setText(datensatz.resttime);
+         startdateTextView.setText(datensatz.stardate);
+         bookeduntilTextView.setText(datensatz.bookeduntil);
+         remtimeTextView.setText(datensatz.remtime);
          totalfeeTextView.setText(datensatz.totalfee);
       }
 

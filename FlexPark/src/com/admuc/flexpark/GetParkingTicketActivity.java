@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.admuc.flexpark.model.ParkingTicket;
+
 public class GetParkingTicketActivity extends Activity {
 
    private double feeSteps = 0.5;
@@ -83,6 +85,10 @@ public class GetParkingTicketActivity extends Activity {
    }
 
    public void bookTicket(View view) {
+      ParkingTicket pt = new ParkingTicket(null, null, currentTime, currentTime, currentTime, currentCosts); // noch mit
+                                                                                                             // gemockten
+                                                                                                             // Werten
+
       Intent i = new Intent(getApplicationContext(), ParkingTicketOverviewActivity.class);
       startActivity(i);
    }
