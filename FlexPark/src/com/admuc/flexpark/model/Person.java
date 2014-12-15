@@ -2,11 +2,11 @@ package com.admuc.flexpark.model;
 
 public abstract class Person {
 
-   protected Long id;
+   protected long id;
    protected String firstname;
    protected String lastname;
 
-   public Person(Long id, String firstname, String lastname) {
+   public Person(long id, String firstname, String lastname) {
       this.id = id;
       this.firstname = firstname;
       this.lastname = lastname;

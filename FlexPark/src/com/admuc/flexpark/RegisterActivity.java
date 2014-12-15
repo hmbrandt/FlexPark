@@ -3,7 +3,9 @@ package com.admuc.flexpark;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.admuc.flexpark.model.User;
 
@@ -17,16 +19,26 @@ public class RegisterActivity extends Activity {
 
    public void openGetParkingTicket(View view) {
 
-      Long id = 0100L; // hier muss noch abfrage wie IDs in DB weiterzählen
-      String firstname = findViewById(R.id.register_FNameInput).toString();
-      String lastname = findViewById(R.id.register_LNameInput).toString();
-      String licensePlate = findViewById(R.id.register_LPlateInput).toString();
-      String username = findViewById(R.id.register_UsernameInput).toString();
-      String password = findViewById(R.id.register_PasswordInput).toString();
+      long id = 100; // hier muss noch abfrage wie IDs in DB weiterzählen
+      String firstname = ((TextView) findViewById(R.id.register_FNameInput)).getText().toString();
+      String lastname = ((TextView) findViewById(R.id.register_LNameInput)).getText().toString();
+      String licensePlate = ((TextView) findViewById(R.id.register_LPlateInput)).getText().toString();
+      String username = ((TextView) findViewById(R.id.register_UsernameInput)).getText().toString();
+      String password = ((TextView) findViewById(R.id.register_PasswordInput)).getText().toString();
 
-      User u = new User(id, firstname, lastname, licensePlate, username, password);
+      User actUser = new User(id, firstname, lastname, licensePlate, username, password);
 
+      Log.d("id", String.valueOf(id));
+      Log.d("Firstname", firstname);
+      Log.d("lastname", lastname);
+      Log.d("licensePlate", licensePlate);
+      Log.d("username", username);
+      Log.d("password", password);
+
+      Bundle b = new Bundle();
+      b.putParcelable("user", actUser);
       Intent i = new Intent(getApplicationContext(), GetParkingTicketActivity.class);
+      i.putExtras(b);
       startActivity(i);
 
    }

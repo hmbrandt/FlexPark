@@ -2,7 +2,7 @@ package com.admuc.flexpark.model;
 
 public class ParkingInspector extends Person {
 
-   public ParkingInspector(Long id, String firstname, String lastname) {
+   public ParkingInspector(long id, String firstname, String lastname) {
       super(id, firstname, lastname);
    }
 
